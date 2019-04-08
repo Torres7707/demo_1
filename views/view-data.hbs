@@ -1,0 +1,63 @@
+<div >
+<h1>Hello! {{account.username}}</h1>
+{{#if account}}
+    <div>
+		<b style="font-size:20px;">Id:</b> {{account.id}}
+	</div>
+	<div>
+		<b style="font-size:20px;">Username:</b> {{account.username}}
+	</div>
+	<div>
+		<b style="font-size:20px;">Password:</b> {{account.password}}
+	</div>
+	<div>
+		<b style="font-size:20px;">Birthday:</b> {{account.born}}
+	</div>
+    <div>
+		<b style="font-size:20px;">City:</b> {{account.city}}
+	</div>
+
+
+	<div>
+		<b style="font-size:20px;">TRAINING:</b> 
+				<div>
+					{{#if datas.length}}
+							<ol>
+							{{#each datas}}
+							<li class="collapsible" style="padding-left:15px">
+							<div style="font-size:15px;"><b>START:</b> {{start}}  </div>
+							<div style="font-size:15px;"><b>STOP:</b> {{stop}}   </div>
+							<div style="font-size:15px;"><b>DESCRIPTION:</b> {{description}} </div>
+							</li>
+							{{/each}}
+							</ol>
+					{{else}}
+					<p class="red-text">No Training</p>
+					{{/if}}		
+	</div>
+	
+	
+	<div>
+		<b style="font-size:20px;">WEIGHT:</b>
+					{{#if datas.length}}
+							<ol>
+						  {{#each datas}}
+							<li class="collapsible" style="padding-left:15px">
+							<div style="font-size:15px;"><b>TIME:</b> {{time}} </div>
+							<div style="font-size:15px;"><b>WEIGHT: </b>{{weight}} </div>
+							</li>
+							{{/each}}
+							</ol>
+					{{else}}
+					<p class="red-text">No Weight</p>
+					{{/if}}
+	</div>
+{{else}}
+	<p class="red-text">No account exists with this id.</p>
+{{/if}}
+
+{{#if account}}
+<a href="/add/data" class="waves-effect waves-light btn">Add Data</a> 
+{{/if}}
+</div>
+</div>

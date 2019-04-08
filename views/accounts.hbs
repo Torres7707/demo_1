@@ -1,0 +1,29 @@
+<h1>Accounts</h1>
+{{#if errors.length}}
+	<p class="red-text">Could not retrive the accounts because:</p>
+
+	<ul class="red-text">
+		{{#each errors}}
+			<li>{{this}}</li>
+		{{/each}}
+	</ul>
+
+{{else}}
+
+	{{#if accounts.length}}
+
+		<div>
+			<ul>
+				{{#each accounts}}
+				<li class="collapsible" style="height:40px">
+				<div><a href="/accounts/{{id}}" class="teal-text" style="padding-left:20px; font-size:25px">{{username}}</a></div>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+
+	{{else}}
+		<p class="red-text">NO accounts exits yet.</p>
+	{{/if}}
+
+{{/if}}

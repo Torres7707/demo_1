@@ -1,0 +1,22 @@
+<h1>ADD Data</h1>
+
+{{#if errors.length}}
+    <p class="red-text">Could not add because:</p>
+    <ul class="red-text">
+        {{#each errors}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+<form action="/add/data" method="POST">
+<h4>Traingings</h4>
+<div>Start: <input type="text" name="start"> </div>
+<div>Stop: <input type="text" name="stop"></div>
+<div>Description: <input type="text" name="description"></div>
+<h4>Weights</h4>
+<div>Time: <input type="text" name="time"> </div>
+<div>Weight: <input type="text" name="weight"></div>
+<button class="btn waves-effect waves-light" type="submit" name="action">Add Data</button>
+
+</form>

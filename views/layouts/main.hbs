@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <title>MyTD</title>
+  <script>
+	   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+  });
+ </script>
+ </head>
+ <body style="min-height:100%;margin:0;padding:0;position:relative;">
+
+
+<nav>
+    <div class="nav-wrapper teal " >
+        <a class="brand-logo" style="padding-left:10px">MyTD</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down" >
+            <li>
+                <a href="/" style="font-size:20px">Home</a>
+            </li>
+            
+            <li>
+                <a href="/accounts" style="font-size:20px">Accounts</a>                                                  
+            </li>
+            {{#if account}}
+            <li><a href="/accounts/{{account.id}}" style="font-size:20px">Logged in as {{account.username}}</a></li>
+            <li><a href="/accounts/sign-out" style="font-size:20px">Sign out</a></li>
+            {{else}}
+            <li><a href="/sign_in" style="font-size:20px">Sign in</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
+ 
+ <div class="teal-text text-darken-2 container" style="font-size:20px; padding-bottom:100px;" >
+  {{{body}}}
+ </div>
+
+  <footer class="page-footer white teal-text center" style="position:absolute;bottom:0;width:100%;height:100px;">Copyright &copy; 2019 MyTD
+  <div class="page-footer white teal-text center">
+      <a href="/contact" class="teal-text">CONTACT</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="/about" class="teal-text">ABOUT</a> 
+  </div>
+  </footer>
+ </body>
+</html>

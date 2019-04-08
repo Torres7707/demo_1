@@ -1,0 +1,18 @@
+<h1>Sign Up</h1>
+
+{{#if errors.length}}
+    <p class="red-text">could not sign up because:</p>
+    <ul class="red-text">
+        {{#each errors}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+<form action="/sign_up" method="POST">
+    <div>Username: <input type="text" name="username" value="{{username}}"></div>
+    <div>Password: <input type="password" name="password"></div>
+    <div>Birthdate: <input type="date" name="born"></div>
+    <div>City： <input type="text" name="city"></div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up</button>
+</form>
